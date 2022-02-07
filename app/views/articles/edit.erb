@@ -1,27 +1,2 @@
 <h2>Edit existing article</h2>
-<% if @article.errors.any? %>
-  <h3>The following errors prevented the article from getting edited!</h3>
-  <% @article.errors.full_messages.each do |message| %>
-    <ul>
-      <li><%= message %></li>
-    </ul>
-  <% end %>
-<% end %>
-
-<%= form_with(model: @article, local: true) do |form| %>
-  <div>
-    <%= form.label :title %></br>
-    <%= form.text_field :title %>
-  </div>
-  <div>
-    <%= form.label :description %></br>
-    <%= form.text_area :description %>
-  </div>
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
-<div>
-  <br/>
-  <%= link_to 'Back to articles listing', articles_path %>
-</div>
+<%= render 'form' %>
