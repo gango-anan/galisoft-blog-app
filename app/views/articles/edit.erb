@@ -1,4 +1,4 @@
-<h1 xmlns="http://www.w3.org/1999/html">New Article</h1>
+<h2>Edit existing article</h2>
 <% if @article.errors.any? %>
   <h3>The following errors prevented the article from getting edited!</h3>
   <% @article.errors.full_messages.each do |message| %>
@@ -21,5 +21,3 @@
     <%= form.submit %>
   </div>
 <% end %>
-
-
