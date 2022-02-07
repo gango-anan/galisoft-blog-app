@@ -1,0 +1,16 @@
+<h1 xmlns="http://www.w3.org/1999/html">New Article</h1>
+<%= form_with(model: @article, local: true) do |form| %>
+  <div>
+    <%= form.label :title %></br>
+    <%= form.text_field :title %>
+  </div>
+  <div>
+    <%= form.label :description %></br>
+    <%= form.text_area :description %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+
