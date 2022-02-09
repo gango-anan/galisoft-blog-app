@@ -1,5 +1,5 @@
 <% if @article.errors.any? %>
-  <h3>The following errors prevented the article from getting edited!</h3>
+  <h3>The following errors prevented the article from getting <%= @article.new_record? ? "created!" : "updated" %></h3>
   <% @article.errors.full_messages.each do |message| %>
     <ul>
       <li><%= message %></li>
@@ -18,7 +18,7 @@
       <%= form.text_area :description, class: "form-control" %>
     </div>
     <div>
-      <%= form.submit "Create Article", class: "btn btn-success btn-lg" %>
+      <%= form.submit(@article.new_record? ? "Create Article" : "Update article", class: "btn btn-success btn-lg") %>
     </div>
   <% end %>
 </div>
