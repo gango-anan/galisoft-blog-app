@@ -1,20 +1,4 @@
 <div class="container">
   <h2 class="text-center">Listing all articles</h2>
-  <% @articles.each do|article| %>
-    <div class="jumbotron">
-      <h3 class="display-4"><%= article.title %></h3>
-      <p class="lead"><%= article.description %></p>
-      <hr class="my-4">
-      <p>
-        <small>
-          Created by: <%= article.user.username %>,
-          created: <%= time_ago_in_words(article.created_at) %> ago,
-          last updated: <%= time_ago_in_words(article.updated_at) %> ago
-        </small>
-      </p>
-      <%= link_to 'Show', article_path(article), class: "btn btn-success" %>
-      <%= link_to 'Edit this article', edit_article_path(article), class: "btn btn-primary" %>
-      <%= link_to 'Delete this article', article_path(article), method: :delete, data: { confirm: "Are you sure you want to delete #{article.title}" }, class: "btn btn-danger" %>
-    </div>
-  <% end %>
+  <%= render 'articles/articles', obj: @articles %>
 </div>
