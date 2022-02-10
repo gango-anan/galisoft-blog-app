@@ -28,7 +28,6 @@ gem 'bcrypt', '~> 3.1.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'will_paginate', '~> 3.3', '>= 3.3.1'
-gem 'bootstrap-will_paginate', '~> 1.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
