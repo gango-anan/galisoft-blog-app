@@ -28,6 +28,12 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <div class="nav-item">
+        <%= link_to 'Log in', login_path, class: "nav-link" %>
+      </div>
+      <div class="nav-item">
+          <%= link_to 'Log out', logout_path, method: :delete, class: "nav-link" %>
+      </div>
     </div>
   </div>
 </nav>
