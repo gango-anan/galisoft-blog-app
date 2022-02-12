@@ -15,14 +15,21 @@
     <%= form.label :email, class: "form-label" %>
     <%= form.email_field :email, class: "form-control", placeholder: 'email@samplemail.com' %>
   </div>
-  <div class="mb-3">
-    <%= form.label :password, class: "form-label" %>
-    <%= form.password_field :password, class: "form-control", placeholder: 'password' %>
-  </div>
-  <div class="mb-3">
-    <%= form.label :password_confirmation, class: "form-label" %>
-    <%= form.password_field :password_confirmation, class: "form-control", placeholder: 'password' %>
-  </div>
+  <% if @user.new_record? %>
+    <div class="mb-3">
+      <%= form.label :password, class: "form-label" %>
+      <%= form.password_field :password, class: "form-control", placeholder: 'password' %>
+    </div>
+    <div class="mb-3">
+      <%= form.label :password_confirmation, class: "form-label" %>
+      <%= form.password_field :password_confirmation, class: "form-control", placeholder: 'password' %>
+    </div>
+  <% else %>
+    <div class="mb-3">
+      <%= form.label :password, class: "form-label" %>
+      <%= form.password_field :password, class: "form-control", placeholder: 'password' %>
+    </div>
+  <% end %>
   <div class="mb-3">
     <%= form.submit(@user.new_record? ? "Sign Up" : "Update account", class: "btn btn-success btn-md") %>
   </div>
